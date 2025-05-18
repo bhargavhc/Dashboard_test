@@ -9,7 +9,7 @@ describe('Full Alert Setup Automation', () => {
 
     beforeEach(() => {
         loginPage.visit();
-        loginPage.login('demo@voosh.in', 'admin@demo');
+        loginPage.login('<username>', '<password>');
         loginPage.navigateToAlerts();
         loginPage.verifyAlertsPage();
     });

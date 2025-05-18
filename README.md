@@ -6,19 +6,23 @@ This project contains end-to-end (E2E) Cypress test automation scripts for the [
 
 ```
 DASHBOARD_TEST/
-│── cypress.config.js         # Cypress configuration
-│── package.json              # Project dependencies
-│── README.md                 # Project documentation
-│── cypress/
-│   ├── downloads/            # Downloaded files during tests
-│   ├── e2e/                  # Cypress test files
+├── cypress/
+│   ├── downloads/             
+│   ├── e2e/                   
 │   │   └── alertNotificationTest.cy.js
 │   └── support/
-│       ├── commands.js       # Custom Cypress commands
-│       ├── e2e.js            # Global Cypress support
-│       └── pages/            # Page Object Model classes
+│       ├── commands.js        
+│       ├── e2e.js            
+│       └── pages/             
 │           ├── alertPage.js
-│           └── loginPage.js
+│           ├── loginPage.js
+├── node_modules/
+├── cypress.config.js          
+├── package-lock.json
+├── package.json               
+├── README.md                 
+├── Voosh_Dashboard_Test_Strategy.docx
+└── Voosh_Dashboard.xlsx
 ```
 
 ## Setup
@@ -68,3 +72,11 @@ Defined in [cypress/support/commands.js](support/commands.js):
 
 - All tests are written using the Cypress framework.
 - Page Object Model is used for maintainability and reusability.
+
+## Authentication in Tests
+
+- For security reasons, string replacers are used instead of actual usernames and passwords in Cypress tests. 
+- The placeholders `<username>` and `<password>` must be replaced with valid credentials when executing test cases.
+```javascript
+  loginPage.login('<username>', '<password>');
+
